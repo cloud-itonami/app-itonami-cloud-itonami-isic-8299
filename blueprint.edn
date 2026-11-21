@@ -1,0 +1,17 @@
+{:itonami.blueprint/id "cloud-itonami-isic-8299"
+ :itonami.blueprint/name "Governed Virtual-Assistant and BPO Task-Matching Actor"
+ :itonami.blueprint/isic-rev5 "8299"
+ :itonami.blueprint/domain :services/virtual-assistant-task-matching
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:operator-workload-protection :client-pii-scope :certified-handling]
+ :itonami.blueprint/governor :routing-governor
+ :itonami.blueprint/robotics false
+ :itonami.blueprint/required-technologies [:identity :audit-ledger]
+ :itonami.blueprint/status :public-oss
+ :itonami.blueprint/implemented-slice
+ "TaskRouter-LLM sealed advisor wrapped by an independent RoutingGovernor
+ (src/bizsupport/policy.kotoba: clearance-tier-gate, capacity-gate,
+ capacity-claim-gate, certification-claim-gate, scope-gate,
+ sanctions-screening-gate, licensed-disclosure), a langgraph StateGraph
+ and an append-only audit ledger. Optional operator screening through
+ cloud-itonami-isic-8291 (src/bizsupport/screening.kotoba)."}
